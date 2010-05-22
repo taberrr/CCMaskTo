@@ -1,0 +1,21 @@
+
+CCMaskTo
+============
+
+CCMaskTo is a CCIntervalAction for cocos2d-iphone written by georgejcook and slightly modified by taberrr to work with cocos2d v0.99.3-rc.
+
+http://www.cocos2d-iphone.org/forum/topic/1306#post-7891
+
+  Usage:
+
+  //
+  // Reveal the sprite in a "swipe from left" style mask transition
+  //
+  CCSprite *mySprite = [CCSprite spriteWithTexture: spriteSheet.texture rect: CGRectMake(0,0, 1,10)];
+  [spriteSheet addChild: mySprite];
+  mySprite.position = ccp(screenSize.width / 2 - 45, screenSize.height / 2);
+
+  [mySprite runAction: [CCMoveBy actionWithDuration: 1 position: ccp(45, 0)]];
+  [mySprite runAction: [CCMaskTo actionWithDuration: 1 rect: CGRectMake(0,0, 90,10)];
+
+
